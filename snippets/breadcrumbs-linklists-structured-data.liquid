@@ -1,0 +1,209 @@
+{% comment %}
+Choose Your TypeまたはChoose Your Purposeの構造化データ自動作成、
+特別なケースとしてPrivate Yoga Instructorsも考慮
+{% endcomment %}
+
+{% assign chooseYourTypeCollections = "senior, prenatal, postnatal, stressmanagementseekers, online-private-yoga-for-everyday-yogis, stiff-body, busylifestyles, plus-size" %}
+{% assign chooseYourPurposeCollections = "strengthen-your-core, hip-flexibility, overcome-physical-inactivity-and-enjoy-an-energetic-workout, improve-sleep-quality, enhance-forward-bend-hamstring-flexibility, correct-posture-and-alleviate-deskwork-induced-hunchback, boost-concentration, lose-weight-and-sculpt-your-body" %}
+
+{% if chooseYourTypeCollections contains collection.handle %}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "ONE OM ONE",
+    "item": "https://1om1.net/"
+  },
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Choose Your Type",
+    "item": "https://1om1.net/collections/"
+  },
+  {
+    "@type": "ListItem",
+    "position": 3,
+    "name": "{{ collection.title }}",
+    "item": "https://1om1.net/collections/{{ collection.handle }}"
+  }
+]
+}
+</script>
+{% elsif chooseYourPurposeCollections contains collection.handle %}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "ONE OM ONE",
+    "item": "https://1om1.net/"
+  },
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Choose Your Purpose",
+    "item": "https://1om1.net/collections/"
+  },
+  {
+    "@type": "ListItem",
+    "position": 3,
+    "name": "{{ collection.title }}",
+    "item": "https://1om1.net/collections/{{ collection.handle }}"
+  }
+]
+}
+</script>
+{% elsif collection.handle == 'all_publish' %}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "ONE OM ONE",
+    "item": "https://1om1.net/"
+  },
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Private Yoga Instructors",
+    "item": "https://1om1.net/collections/all_publish"
+  }
+]
+}
+</script>
+{% endif %}
+
+{% comment %}
+Private Yoga Instructors配下の構造化データを作成
+{% endcomment %}
+
+{% assign privateYogaInstructors = 
+  "online-private-yoga-with-chelsea, 
+   online-private-yoga-with-tomoko, 
+   online-private-yoga-with-fonny, 
+   online-private-yoga-with-miles, 
+   online-private-yoga-with-rin, 
+   online-private-yoga-with-lora, 
+   online-private-yoga-with-shiori, 
+   online-private-yoga-with-abhi-nautiyal, 
+   online-private-yoga-with-tracy-yu, 
+   online-private-yoga-with-julylai, 
+   online-private-yoga-with-shirlyn, 
+   online-private-yoga-with-adrian, 
+   online-private-yoga-with-weiwen, 
+   online-private-yoga-with-zsa-zsa, 
+   online-private-yoga-with-asako-suehiro, 
+   online-private-yoga-with-leng-zie, 
+   online-private-yoga-with-felice, 
+   online-private-yoga-with-sprina, 
+   online-private-yoga-with-chris-wong-bio,
+   online-private-yoga-with-nagisa,
+   online-private-yoga-with-angeline-ong,
+   online-private-yoga-with-mallika,
+   online-private-yoga-with-yuval,
+   online-private-yoga-with-nabilla,
+   online-private-yoga-with-sze-ping, 
+   online-private-yoga-with-sueze,
+   online-private-yoga-with-lisa,
+   chelsea, 
+   tomoko, 
+   fonny, 
+   miles, 
+   rin, 
+   lora, 
+   shiori, 
+   abhi-nautiyal, 
+   tracy-yu, 
+   julylai, 
+   shirlyn, 
+   adrian, 
+   weiwen, 
+   zsa-zsa, 
+   asako-suehiro, 
+   leng-zie, 
+   felice, 
+   sprina, 
+   chris-wong-bi,
+   nagisa,
+   angeline-ong,
+   mallika,
+   yuval,
+   nabilla,
+   sze-ping, 
+   sueze,
+   lisa" 
+%}
+
+{% if privateYogaInstructors contains product.handle %}
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "ONE OM ONE",
+    "item": "https://1om1.net/"
+  },
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Private Yoga Instructors",
+    "item": "https://1om1.net/collections/all_publish"
+  },
+  {
+    "@type": "ListItem",
+    "position": 3,
+    "name": "{{ product.title }}",
+    "item": "https://1om1.net/products/{{ product.handle }}"
+  }
+]
+}
+</script>
+
+  {% comment %}
+pagevisitのテスト
+{% endcomment %}
+
+{% endif %}
+
+{% comment %}
+pageテンプレートの時のみ適用
+{% endcomment %}
+
+{% assign page_handles = "contact, why-1on1, ccpa-opt-out, faq, about-us, cancellation-policy, how-it-works, join-our-team, pricing" %}
+
+{% if page_handles contains page.handle %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ONE OM ONE",
+      "item": "https://1om1.net/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title }}",
+      "item": "https://1om1.net/pages/{{ page.handle }}"
+    }
+  ]
+}
+</script>
+{% endif %}

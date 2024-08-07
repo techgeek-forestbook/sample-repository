@@ -1,0 +1,140 @@
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="{{ 'YTPlayer.js' | asset_url }}"></script>
+<script>
+ $(window).on('load',function(){
+	$("#malin-bk-player").YTPlayer();
+ });
+</script>
+
+<div class="malin-bk-youtube">
+<div id="malin-bk-player-wrap">
+ <!--<h2 class="malin-bk-youtube-title">{{ section.settings.bk_youtube_title }}</h2>-->
+ <div id="malin-bk-player" data-property="{
+     videoURL: '{{ section.settings.bk_youtube_url }}',　
+     containment: '#malin-bk-player-wrap', 
+     autoPlay: true, 
+     loop: 1,　
+     mute: true,
+     startAt: 0, 
+     showControls: false,
+     showYTLogo: false,
+     onReady: function() {
+      $('#malin-bk-yt-loading').fadeOut();
+      $('#malin-play-mask').fadeIn();
+      $('.malin-bk-youtube-title').fadeIn();
+     }  
+ }"></div>
+ <div id="malin-bk-yt-loading"><img src="{{ 'lood.png' | asset_url }}" class="pc"><img src="{{ 'sp_lood.png' | asset_url }}" class="sp"></div>
+ 
+</div>
+ <div id="malin-play-mask"></div>
+</div>
+
+
+<style>
+  .malin-bk-youtube {
+  }
+  #malin-bk-player-wrap {
+     position: relative;
+  max-width: 177.77777778vh; /* 16:9 の幅→16 ÷ 9＝ 177.77% */
+  height: 45.25vw; /* 16:9の幅 → 9 ÷ 16 = 56.25% */
+  min-height: 100%;
+  min-width: 100%;
+  }
+  #malin-bk-player-wrap:before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10,10,10,0.3);
+    z-index: 1;
+  }
+  #malin-bk-player-wrap #wrapper_malin-bk-player {
+  }
+#malin-bk-yt-loading {
+  }
+#malin-bk-yt-loading img {
+    width: 100%;
+  }
+  .sp{
+    display: none;
+  }
+  
+@media screen and (max-width: 749px) {
+  #malin-bk-player-wrap {
+  max-width: 100vw;
+  height: 100vw;
+  min-height: 100%;
+  min-width: 100%;
+  }
+  #malin-bk-player-wrap iframe {
+    height: 120vw!important;
+  }
+  .pc{
+    display: none;
+  }
+  .sp{
+    display: block;
+  }
+}
+
+  
+</style>
+
+
+
+
+{% schema %}
+{
+ "name": "背景動画自動再生(YouTube)",
+ "tag": "section",
+ "class": "spaced-section",
+ "settings": [
+     {
+         "type": "image_picker",
+         "id": "bk_youtube_img",
+         "label": "ローディング画像"
+     },
+      {
+           "id": "bk_youtube_url",
+           "type": "text",
+           "label": "YouTube URL"
+      },
+      {
+           "id": "bk_youtube_title",
+           "type": "html",
+           "label": "タイトル",
+           "default": "タイトル"
+      },
+      {
+                 "type": "number",
+                   "id": "bk_youtube_sizePC",
+                   "label": "フォントサイズ　PC (px)",
+                   "default": 30
+      },
+      {
+                   "type": "number",
+                   "id": "bk_youtube_sizeSP",
+                   "label": "フォントサイズ SP (px)",
+                   "default": 16
+      },
+      {
+                "type": "color",
+                "id": "bk_youtube_color",
+                "label": "タイトルカラー",
+                "default": "#fff"
+      }
+
+ ],
+ "presets": [
+   {
+     "name": "背景動画自動再生(YouTube)"
+   }
+ ]
+}
+{% endschema %}

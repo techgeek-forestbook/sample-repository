@@ -1,0 +1,99 @@
+{% if section.settings.enable_loading %}
+<div>
+<div id="loading" style="background: {{ section.settings.bk_color }};">
+   <div id="loading_logo">
+     test...
+   </div>
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+  {
+   "name": "loading",
+    "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_loading",
+          "default": false,
+          "label": "ローディングを有効にする"
+        },
+        {
+            "type": "color",
+            "id": "bk_color",
+            "label": "◆背景カラー",
+            "default": "#fff"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "t:sections.header.settings.logo.label", 
+		  "info": "画像が設定されていない場合はテキストが表示されます。"
+        },
+        {
+            "type": "text",
+            "id": "loading_txt",
+            "default": "Loading...",
+            "label": "テキスト"
+        },
+        {
+            "type": "color",
+            "id": "txt_color",
+            "label": "テキストカラー",
+            "default": "#333"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+  #loading  {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  text-align:center;
+
+}
+ #loading_logo  {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+ #loading_logo  img {
+  width:260px;
+}
+
+.fadeUp{
+animation-name: fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+opacity: 0;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+  transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+  transform: translateY(0);
+  }
+}
+
+
+}
+
+{% endstylesheet %}
+
+{% javascript %}
+$(window).on('load',function(){
+  function loaderClose(){
+    $("#loading").fadeOut();
+  }
+  setTimeout(loaderClose, 1000);
+});
+{% endjavascript %}

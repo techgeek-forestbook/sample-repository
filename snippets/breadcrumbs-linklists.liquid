@@ -1,0 +1,184 @@
+{% comment %} <style>
+    a:link, a:visited, a:hover, a:active {
+        color: #000000; /* ここに希望する色を指定します */
+    }
+</style> {% endcomment %}
+
+<style>
+    .breadcrumb a:link, .breadcrumb a:visited, .breadcrumb a:hover, .breadcrumb a:active {
+        color: #000000; /* ここに希望する色を指定します */
+    }
+    .breadcrumb .non-link-text {
+        color: #000000; /* 'Choose Your Type'テキストの色を指定します */
+    }
+</style>
+
+{% assign current_path = request.path | remove_first: '/' %}
+{% assign breadcrumbs = current_path | split: '/' %}
+{% assign custom_breadcrumbs_displayed = false %}
+
+
+<!-- メニューバー以外のページのパンくずリスト -->
+{% if breadcrumbs[0] == 'blogs' and breadcrumbs[1] == 'private-yoga-blog' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;<a href="/blogs/private-yoga-blog">Private Yoga Blog</a>
+    {% for breadcrumb in breadcrumbs offset: 2 %}
+        {% if forloop.last %}
+            &nbsp;>&nbsp;<span class="non-link-text">{{ breadcrumb | replace: '-', ' ' | capitalize }}</span>
+        {% else %}
+            {% assign breadcrumb_path = breadcrumbs | slice: 0, forloop.index0 | join: '/' %}
+            &nbsp;>&nbsp;<a href="/{{ breadcrumb_path }}">{{ breadcrumb | capitalize }}</a>
+        {% endif %}
+    {% endfor %}
+</nav>
+{% endif %}
+
+<!-- FAQページのパンくずリスト -->
+{% if breadcrumbs[0] == 'pages' and breadcrumbs[1] == 'faq' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;<span>FAQ</span>
+</nav>
+{% endif %}
+
+<!-- How It Worksページのパンくずリスト -->
+{% if breadcrumbs[0] == 'pages' and breadcrumbs[1] == 'how-it-works' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;How It Works
+</nav>
+{% endif %}
+
+<!-- About Usページのパンくずリスト -->
+{% if breadcrumbs[0] == 'pages' and breadcrumbs[1] == 'about-us' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;About Us
+</nav>
+{% endif %}
+
+<!-- Join Our Teamページのパンくずリスト -->
+{% if breadcrumbs[0] == 'pages' and breadcrumbs[1] == 'join-our-team' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;Join Our Team
+</nav>
+{% endif %}
+
+<!-- CCPA Opt-Outページのパンくずリスト -->
+{% if breadcrumbs[0] == 'pages' and breadcrumbs[1] == 'ccpa-opt-out' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;CCPA Opt-Out
+</nav>
+{% endif %}
+
+<!-- Contactページのパンくずリスト -->
+{% if breadcrumbs[0] == 'pages' and breadcrumbs[1] == 'contact' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;Contact
+</nav>
+{% endif %}
+
+<!-- Cancellation Policyページのパンくずリスト -->
+{% if breadcrumbs[0] == 'pages' and breadcrumbs[1] == 'cancellation-policy' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;Cancellation Policy
+</nav>
+{% endif %}
+
+<!-- Terms of Serviceページのパンくずリスト -->
+{% if breadcrumbs[0] == 'policies' and breadcrumbs[1] == 'terms-of-service' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;Terms of Service
+</nav>
+{% endif %}
+
+<!-- Refund Policyページのパンくずリスト -->
+{% if breadcrumbs[0] == 'policies' and breadcrumbs[1] == 'refund-policy' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;Refund Policy
+</nav>
+{% endif %}
+
+<!-- Privacy Policyページのパンくずリスト -->
+{% if breadcrumbs[0] == 'policies' and breadcrumbs[1] == 'privacy-policy' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;Privacy Policy
+</nav>
+{% endif %}
+
+<!-- Legal Noticeページのパンくずリスト -->
+{% if breadcrumbs[0] == 'policies' and breadcrumbs[1] == 'legal-notice' %}
+{% assign custom_breadcrumbs_displayed = true %}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+    <a href="/">ONE OM ONE</a>&nbsp;>&nbsp;Legal Notice
+</nav>
+{% endif %}
+
+<!-- メニューバー用パンくずリスト -->
+{% assign menu = linklists.main-menu -%}
+{% if template.name != 'index' and custom_breadcrumbs_displayed == false  -%}
+<nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
+<a href="/">ONE OM ONE</a>&nbsp;
+  
+{%- for link in menu.links -%}
+    {%- if link.active or link.child_active -%} 
+         >&nbsp;{%- if link.active -%}
+            {%- if link.title == 'Instructors' -%} 
+                Private Yoga Instructors
+            {%- else -%} 
+                {{ link.title }}
+            {%- endif -%}
+         {%- else -%} 
+            {%- if link.title == 'Instructors' -%} 
+                <a href="{{ link.url }}">Private Yoga Instructors</a>
+                          &nbsp;
+            {%- else -%} 
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              &nbsp;
+            {%- endif -%}
+         {%- endif -%}
+    {%- endif -%}
+    {%- for sub_link in link.links -%}
+        {%- if sub_link.active or sub_link.child_active -%} 
+            >&nbsp;{%- if sub_link.active -%} 
+                {%- if sub_link.title == 'Instructors' -%} 
+                    Private Yoga Instructors
+                {%- else -%} 
+                    {{ sub_link.title }}
+                {%- endif -%}
+            {%- else -%} 
+                {%- if sub_link.title == 'Instructors' -%} 
+                    <a href="{{ sub_link.url }}">Private Yoga Instructors</a>
+                {%- else -%} 
+                    <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+                {%- endif -%}
+                <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+                &nbsp;
+            {%- endif -%}
+        {%- endif -%}
+        {%- for sub_sub_link in sub_link.links -%}
+            {%- if sub_sub_link.active -%} 
+               >&nbsp;{%- if sub_sub_link.active -%} 
+                    {%- if sub_sub_link.title == 'Instructors' -%} 
+                        Private Yoga Instructors
+                    {%- else -%} 
+                        {{ sub_sub_link.title }}
+                    {%- endif -%}
+               {%- else -%} 
+                  <a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
+                  &nbsp;
+               {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endfor -%}
+{%- endfor -%}
+</nav>
+{% endif %}

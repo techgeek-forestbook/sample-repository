@@ -1,0 +1,94 @@
+
+{% if section.settings.section_id.size > 0 %}
+  <!-- PageFlyGlobalSection -->
+  {% render 'pagefly-main-js' %}
+  {% render 'pagefly-main-css' %}
+  {% include section.settings.section_id %}
+{% else %}
+  
+    {% if request.design_mode %}
+      <style>.pf-ph{font-size:14px!important;background:#fafafa;padding:20px;text-align:center;border:1px solid #f0f0f0;border-radius:4px;margin:15px}.pf-ph span{display:block;background:#e6f7ff;padding:8px 15px;border:1px solid #91d5ff}</style>
+      <div class="pf-ph">
+        <h3>PageFly Section</h3>
+        <span>No section selected. Please select your section from the list</span>
+      </div>
+    {% endif %}
+  
+{% endif %}
+
+{% schema %}
+{
+  "name": "PageFly Section",
+  "settings": [
+    {
+      "id": "section_id",
+      "type": "select",
+      "label": "Sections",
+      "options": [
+        {
+          "label": "Select section",
+          "value": ""
+        },
+        {
+          "label": "pf-happy-customer",
+          "value": "pf-277dd608"
+        },
+        {
+          "label": "pf-happy-customer-latest",
+          "value": "pf-68398af3"
+        },
+        {
+          "label": "pf-price-packges",
+          "value": "pf-a4bb2242"
+        },
+        {
+          "label": "Instagram_slideshow",
+          "value": "pf-e8a555d8"
+        },
+        {
+          "label": "7-Day Trial section",
+          "value": "pf-12962530"
+        },
+        {
+          "label": "blog",
+          "value": "pf-658f88e3"
+        },
+        {
+          "label": "choose-your-type",
+          "value": "pf-b1c1d5b7"
+        },
+        {
+          "label": "blog-top",
+          "value": "pf-1884630c"
+        },
+        {
+          "label": "choose-your-type-top",
+          "value": "pf-79df064f"
+        },
+        {
+          "label": "choose-your-purpose",
+          "value": "pf-580f9dc6"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Find and edit your section on the [section listing](https://1-om-1.myshopify.com/admin/apps/pagefly/sections)"
+    },
+    {
+      "type": "paragraph",
+      "content": "To add block to a section, please use the App Block element on PageFly section editor."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PageFly Section"
+    }
+  ]
+}
+{% endschema %}

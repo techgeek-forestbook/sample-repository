@@ -1,0 +1,41 @@
+# we use Shopify as our ecommerce platform
+{%- comment -%}
+# Caution! Please read https://help.shopify.com/en/manual/promoting-marketing/seo/editing-robots-txt before proceeding to make changes to this file.
+{% endcomment %}
+{% for group in robots.default_groups %}
+  {{- group.user_agent -}}
+  
+  {% for rule in group.rules %}
+    {{- rule -}}
+  {% endfor %}
+
+  {%- if group.sitemap != blank -%}
+    {{ group.sitemap }}
+  {%- endif -%}
+{% endfor %}
+
+# Custom rules to block access to specific Atom feeds
+User-agent: *
+Disallow: /products/*?pr_prod_strat=*'
+Disallow: /collections/all_publish.atom
+Disallow: /collections/senior.atom
+Disallow: /collections/wheelchair.atom
+Disallow: /collections/overcome-physical-inactivity-and-enjoy-an-energetic-workout.atom
+Disallow: /collections/improve-sleep-quality.atom
+Disallow: /collections/prenatal.atom
+Disallow: /collections/plus-size.atom
+Disallow: /collections/boost-concentration.atom
+Disallow: /collections/master-the-backbend.atom
+Disallow: /collections/correct-posture-and-alleviate-deskwork-induced-hunchback.atom
+Disallow: /blogs/private-yoga-blog.atom
+Disallow: /blogs/繝九Η繝ｼ繧ｹ.atom
+Disallow: /blogs/test.atom
+Disallow: /blogs/news.atom
+Disallow: /collections/all.atom
+Disallow: /collections/lose-weight-and-sculpt-your-body.atom
+Disallow: /collections/hip-flexibility.atom
+Disallow: /collections/enhance-forward-bend-hamstring-flexibility.atom
+Disallow: /collections/online-private-yoga-for-hearing-loss.atom
+Disallow: /collections/stiff-body.atom
+Disallow: /collections/postnatal.atom
+Disallow: /collections/stressmanagementseekers.atom
