@@ -1,1 +1,134 @@
-{"sections":{"main":{"type":"main-page","settings":{"padding_top":28,"padding_bottom":28}},"16581110214f648c81":{"type":"rich-text","disabled":true,"blocks":{"16581110211e956771-0":{"type":"heading","settings":{"heading":"Ready to book your yoga class?","heading_size":"h1"}},"16581110211e956771-1":{"type":"text","settings":{"text":"<p>Start your FREE 40 minutes trial class!<\/p>"}},"16581110211e956771-2":{"type":"button","settings":{"button_label":"Request Free Trial Class","button_link":"","button_style_secondary":false}}},"block_order":["16581110211e956771-0","16581110211e956771-1","16581110211e956771-2"],"settings":{"color_scheme":"background-1","full_width":true,"padding_top":40,"padding_bottom":52}},"d4e11227-06ff-4c1f-b1a3-1311faab2214":{"type":"pagefly-section","settings":{"section_id":"pf-12962530"}},"b580eb1d-4460-4ef2-9453-f2bb41d1d3c2":{"type":"multicolumn","blocks":{"template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-0":{"type":"column","settings":{"title":"\"A delightful way to start the day\"","text":"<p>My online class with the yoga teacher this morning was a very delightful way to start the day. It felt really natural with her & therapeutic. With her, you don’t have to feel inadequate about being less than a beginner at yoga. She will take care of you on screen, just like the real deal.<\/p>","link_label":"","link":""}},"template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-1":{"type":"column","settings":{"title":"\"Fully communicate with the yoga teacher via zoom\"","text":"<p>It was the first experience for me to fully communicate with yoga teachers via zoom. The teacher's voice was clear, and with her guidance I was able to fully be relaxed. I liked it so much.<\/p>","link_label":"","link":""}},"template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-2":{"type":"column","settings":{"title":"\"It’s comfortable to do the private lesson at home\"","text":"<p>I love it. It’s comfortable to do the private lesson at home, I don’t have to change cloth with other sweaty people in the gym. It’s all here. I don’t want to go out in winter.<\/p>","link_label":"","link":""}},"33eb4556-01a6-4f97-85dd-1c257f3f8538":{"type":"column","settings":{"title":"\"Nothing like this in my town\"","text":"<p>The yoga teacher guided me very well. Everything was lovely and I could understand everything. Nothing like this in my town. I have never heard of private lesson here.<\/p>","link_label":"","link":""}},"e43a5c64-a592-47fb-b30f-41e3bbc7e03a":{"type":"column","settings":{"title":"\"The yoga teacher worked very well with me\"","text":"<p>The yoga teacher worked very well with me and made adjustment when there was a point I couldn’t form a palm she adjusted it accordingly. I really like the mantra she coached me though the breathing the whole time.<\/p>","link_label":"","link":""}}},"block_order":["template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-0","template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-1","template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-2","33eb4556-01a6-4f97-85dd-1c257f3f8538","e43a5c64-a592-47fb-b30f-41e3bbc7e03a"],"settings":{"title":"Testimonials","heading_size":"h1","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","background_style":"primary","button_label":"","button_link":"","color_scheme":"background-1","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}}},"order":["main","16581110214f648c81","d4e11227-06ff-4c1f-b1a3-1311faab2214","b580eb1d-4460-4ef2-9453-f2bb41d1d3c2"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "16581110214f648c81": {
+      "type": "rich-text",
+      "blocks": {
+        "16581110211e956771-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ready to book your yoga class?",
+            "heading_size": "h1"
+          }
+        },
+        "16581110211e956771-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Start your FREE 40 minutes trial class!<\/p>"
+          }
+        },
+        "16581110211e956771-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Request Free Trial Class",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "16581110211e956771-0",
+        "16581110211e956771-1",
+        "16581110211e956771-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "d4e11227-06ff-4c1f-b1a3-1311faab2214": {
+      "type": "pagefly-section",
+      "settings": {
+        "section_id": "pf-12962530"
+      }
+    },
+    "b580eb1d-4460-4ef2-9453-f2bb41d1d3c2": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-0": {
+          "type": "column",
+          "settings": {
+            "title": "\"A delightful way to start the day\"",
+            "text": "<p>My online class with the yoga teacher this morning was a very delightful way to start the day. It felt really natural with her & therapeutic. With her, you don’t have to feel inadequate about being less than a beginner at yoga. She will take care of you on screen, just like the real deal.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-1": {
+          "type": "column",
+          "settings": {
+            "title": "\"Fully communicate with the yoga teacher via zoom\"",
+            "text": "<p>It was the first experience for me to fully communicate with yoga teachers via zoom. The teacher's voice was clear, and with her guidance I was able to fully be relaxed. I liked it so much.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-2": {
+          "type": "column",
+          "settings": {
+            "title": "\"It’s comfortable to do the private lesson at home\"",
+            "text": "<p>I love it. It’s comfortable to do the private lesson at home, I don’t have to change cloth with other sweaty people in the gym. It’s all here. I don’t want to go out in winter.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "33eb4556-01a6-4f97-85dd-1c257f3f8538": {
+          "type": "column",
+          "settings": {
+            "title": "\"Nothing like this in my town\"",
+            "text": "<p>The yoga teacher guided me very well. Everything was lovely and I could understand everything. Nothing like this in my town. I have never heard of private lesson here.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "e43a5c64-a592-47fb-b30f-41e3bbc7e03a": {
+          "type": "column",
+          "settings": {
+            "title": "\"The yoga teacher worked very well with me\"",
+            "text": "<p>The yoga teacher worked very well with me and made adjustment when there was a point I couldn’t form a palm she adjusted it accordingly. I really like the mantra she coached me though the breathing the whole time.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-0",
+        "template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-1",
+        "template--16323096772853__b580eb1d-4460-4ef2-9453-f2bb41d1d3c2-166985465166f25ed6-2",
+        "33eb4556-01a6-4f97-85dd-1c257f3f8538",
+        "e43a5c64-a592-47fb-b30f-41e3bbc7e03a"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16581110214f648c81",
+    "d4e11227-06ff-4c1f-b1a3-1311faab2214",
+    "b580eb1d-4460-4ef2-9453-f2bb41d1d3c2"
+  ]
+}
