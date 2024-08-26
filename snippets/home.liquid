@@ -1,0 +1,95 @@
+<div class="booking-app_content-home">
+  <div class="booking-app_content-home_achievement">
+    <div class="achievement-charts">
+      <select data-month="achievement-month" id="achievement-month">
+      </select>
+      <div class="achievement-donut-chart">
+        <div class="achievement-donut-chart_inner">
+          <span>3</span>
+          <span>/</span>
+          <span>4</span>
+        </div>
+      </div>
+      <div class="achievement-message">
+        <span>Lessons Taken in </span>
+        <span class="achievement-message_display-month"></span>
+      </div>
+    </div>
+    <hr>
+    <div class="achievement-taken-this-month">
+      <span>Lessons Taken This Month</span>
+      <span>3</span>
+    </div>
+    <hr>
+    <div class="achievement-taken-total">
+      <span>Total Lessons Taken(All Time)</span>
+      <span>33</span>
+    </div>
+    <hr>
+    <div class="achievement-membership-rank">
+      <span>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <rect width="18" height="18" fill="url(#pattern0_70_336)"/>
+          <defs>
+          <pattern id="pattern0_70_336" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#image0_70_336" transform="scale(0.0104167)"/>
+          </pattern>
+          <image id="image0_70_336" width="96" height="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAA71JREFUeF7tXe1R3DAUlI/CAg2ESSEhFQTuSAUhhWRIA1wKw2ZExsFxdPrws7Urbu+35Sftvt0ny5Kvc/pBEeig0RXciQBwEogAEQBGABxeChABYATA4aUAEeDc4/fbfdcNHwbXXdbAo3PDcRi63/1ud/z0eX+sEfNUDKgCPPCuc3dIANzgDtdf7veoPsAIoAB/RB1IAoQAKvDBJFQn4OeP/eVu6J9Qko/Fvb65r45H9YCU2Q9UQXUCfj18fao12ylVmZ8dfbz5dlXaznJ9dQIeH24HS4e3blvbhugISAGQInDr9msngAiYIZoiUAQkLCwFoFVBIkAE2HLAmoHo9rbR/99aNUA14F8EtvZwq4KkANUAWw5YMxDd3jZ61QBnJVAEyIJsOWDNQHR72+hlQbIgdAZb40sBqgG2HLBmILq9bfSqAaoB6Ay2xpcCVANsOWDNQHR72+hVA1QD0BlsjS8FqAbYciCVgX23u4ptGU+1j73QydmVl3ohZBt9AzXAd9HvUHvuLg4hIpYSkAP+WeyMK9qaGNg2XkpADvBjXp4FASWAhNSQS0BpHB8rZX9r28+f8QF+KRBDXRptKbW13Xv4EvB9zNr+jyOA4WjSjGVE9sMI8IGXZukmgj23I0ojiP60zMXwfIc6LxCbbW1CdOCmkBow7wdEDcCsn46fgoCxQ1WIIAH+bepbS2uZcTazpcEdGA5mz2GgUsC0c6uepiTLeloLConEZEvEwNNaUIiEYltqAPimCCiatjYEPvRBLLMmBy8L2lJjwDepgKkS5mtCqKUESyI1q4DgkrYUYM2F/PYhAhBr+fk9Pn0l7XPAqS7Hng8Qy8lWEt4VAeivXy0hozkCoq80G6wDzRGQepvWmg01RUDW+lBjKmiKgKwdFSKgvBRlAVt+22gLlmkrXAEI8P8yQ6AWOAGm5WajKhhUACfAY4hQAQP4VGtBVZVAYD2Uq6FZ00yj7bA9LVNY0BzTTSyJKOubeCe8qiWRgk9VA1Z5Fzy7CcPOt5RjUlrQtNMWO2KZ6cRIoCZgjaLMvjj37glgm/XM1UBNgMV+3ubZ9b+InvL9JmZBvpOptf/cgTLbEK0C1vB/pkW3U8lCS0DSfiZz+5Jrc1VT6zpaAqL2Ezq+mjh3xmpDlARE7SfyVLu0Xa1sD8WhJMC697OlnXNtELBgLWdOIuveUUoCvFRf7aTvX/9bculfDa5xj63tiZaArQfOcn8RAGZCBIgAMALg8FKACAAjAA4vBYgAMALg8FKACAAjAA4vBYAJeAFK9uN/A+OmoAAAAABJRU5ErkJggg=="/>
+          </defs>
+        </svg>
+        Membership Rank
+      </span>
+      <span>Bronze</span>
+    </div>
+    
+  </div>
+</div>
+
+<style>
+  .booking-app_content-home_achievement {
+    background-color: #fff;
+    width: 350px;
+    padding: 16px;
+  }
+  .achievement-charts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #achievement-month {
+    align-self: flex-end;
+  }
+  .achievement-donut-chart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: conic-gradient(
+      #000 0deg 35%,
+      #D9D9D9 35% 0deg
+    );
+  }
+
+  .achievement-donut-chart_inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .achievement-taken-this-month,
+  .achievement-taken-total,
+  .achievement-membership-rank {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>

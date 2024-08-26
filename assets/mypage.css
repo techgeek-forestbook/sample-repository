@@ -1,0 +1,79 @@
+#booking-app {
+  position: relative;
+}
+#booking-app_menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.booking-app_menu-box {
+  padding: 30px;
+  text-align: center;
+  margin: auto;
+  min-width: 200px;
+  max-width: 300px;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+}
+
+ul.booking-app_menu-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30px;
+}
+li.booking-app_menu-item {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li.booking-app_menu-item img {
+  width: 100%;
+  height: 100%;
+}
+
+a.booking-app_menu-link {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.5;
+}
+a.booking-app_menu-link.active {
+  opacity: 1;
+}
+
+.booking-app_menu-icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .booking-app_menu-icon {
+    display: inline-block;
+  }
+  .booking-app_menu-highlight {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  
+}

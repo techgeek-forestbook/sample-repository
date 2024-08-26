@@ -1,0 +1,178 @@
+{% if customer and request.path contains "account" %}
+
+  <div id="booking-app">
+    {% render "menu" %}
+    <div id="booking-app_content">
+      <span></span>
+    </div>
+  </div>
+{% endif %}
+
+{% stylesheet %}
+/**
+* 既存テーマのCSS変更
+**/
+.cta_container,
+.breadcrumb {
+  display: none !important;
+}
+/**
+* 既存テーマのCSS変更 - 終了
+**/
+#booking-app {
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: clamp(10px, 5vw, 30px);
+}
+#booking-app_menu {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+}
+#booking-app_content {
+  background-color: #F3F3F3;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+}
+.booking-app_menu-box {
+  padding: 30px;
+  text-align: center;
+}
+
+ul.booking-app_menu-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30px;
+}
+li.booking-app_menu-item {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li.booking-app_menu-item img {
+  width: 100%;
+  height: 100%;
+}
+
+a.booking-app_menu-link {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.5;
+}
+a.booking-app_menu-link.active {
+  opacity: 1;
+  font-weight: 700;
+}
+.booking-app_menu-highlight {
+  width: 100%;
+  white-space: nowrap;
+}
+.booking-app_menu-icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .booking-app_menu-icon {
+    display: inline-block;
+  }
+  .booking-app_menu-highlight {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+  }
+}
+
+/**
+ * 共通のCSS
+**/
+hr {
+  margin: 16px 0 !important;
+}
+{% endstylesheet %}
+
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const menu = urlParams.get('menu');
+  const menuLinkList = document.querySelectorAll('.booking-app_menu-link');
+  menuLinkList.forEach((menuLink) => {
+    if (menuLink.getAttribute('data-menu') === menu) {
+      menuLink.classList.add('active');
+    }
+  });
+  const displayElement = document.getElementById('booking-app_content');
+  const homeElement = `{% render "home" %}`;
+  const lessonHistoryElement = `{% render "lesson-history" %}`;
+  const membershipElement = `{% render "membership" %}`;
+  const profileElement = `{% render "profile" %}`;
+  console.log({menu});  
+  
+  if(menu === 'home') {
+    displayElement.innerHTML = homeElement;
+  } else if(menu === 'history') {
+    displayElement.innerHTML = lessonHistoryElement;
+  } else if(menu === 'membership') {
+    displayElement.innerHTML = membershipElement;
+  } else if(menu === 'profile') {
+    displayElement.innerHTML = profileElement;
+  }
+
+  /**
+   * Home で必要なJSの処理
+   * */
+
+  const selectElement = document.getElementById('achievement-month');
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
+
+  for (let i = 0; i < 12; i++) {
+    const monthDate = new Date(currentYear, currentMonth - i, 1);
+    const month = monthDate.toLocaleString('en-US', { month: 'long' });
+    const year = monthDate.getFullYear();
+    const option = document.createElement('option');
+    option.value = `${monthDate.getMonth() + 1}-${year}`;
+    option.textContent = `${month}, ${year}`;
+    if (i === 0) {
+      // 今月を初期値に設定
+      option.selected = true;
+      document.querySelector('.achievement-message_display-month').textContent = option.textContent;
+    }
+    selectElement.appendChild(option);
+  }
+  selectElement.addEventListener('change', (event) => {
+    const selectedOption = event.target.options[event.target.selectedIndex];
+    const displayMonthElement = document.querySelector('.achievement-message_display-month');
+    displayMonthElement.textContent = selectedOption.textContent;
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "ダッシュボード",
+  "tag": "section"
+}
+{% endschema %}
+
