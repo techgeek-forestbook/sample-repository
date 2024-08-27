@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const menu = urlParams.get('menu');
   const menuLinkList = document.querySelectorAll('.booking-app_menu-link');
   menuLinkList.forEach((menuLink) => {
-    if (menuLink.getAttribute('data-menu') === menu) {
+    if (menuLink.getAttribute('data-menu') === menu || (!menu && menuLink.getAttribute('data-menu') === 'home')) {
       menuLink.classList.add('active');
     }
   });
@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const profileElement = `{% render "profile" %}`;
   console.log({menu});  
   
-  if(menu === 'home') {
+  if(menu === 'home' || !menu) {
     displayElement.innerHTML = homeElement;
   } else if(menu === 'history') {
     displayElement.innerHTML = lessonHistoryElement;
