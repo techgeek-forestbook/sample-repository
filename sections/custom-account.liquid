@@ -25,7 +25,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: clamp(10px, 5vw, 30px);
 }
 #booking-app_menu {
   position: sticky;
@@ -33,6 +32,9 @@
   left: 0;
   z-index: 10;
   background-color: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 250px;
 }
 #booking-app_content {
   background-color: #F3F3F3;
@@ -41,7 +43,6 @@
   width: 100%;
 }
 .booking-app_menu-box {
-  padding: 30px;
   text-align: center;
 }
 
@@ -52,12 +53,14 @@ ul.booking-app_menu-list {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 li.booking-app_menu-item {
   padding: 0;
   margin: 0;
   list-style: none;
+  width: 100%;
+  text-align: left;
 }
 li.booking-app_menu-item img {
   width: 100%;
@@ -66,7 +69,6 @@ li.booking-app_menu-item img {
 
 a.booking-app_menu-link {
   position: relative;
-  display: inline-block;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -74,6 +76,13 @@ a.booking-app_menu-link {
   font-weight: 500;
   color: inherit;
   opacity: 0.5;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+a.booking-app_menu-link:hover {
+  opacity: 1;
+  background-color: #F3F3F3;
+  transition: all 0.2s ease-in-out;
 }
 a.booking-app_menu-link.active {
   opacity: 1;
@@ -89,7 +98,22 @@ a.booking-app_menu-link.active {
   display: inline-block;
 }
 
+footer.footer {
+  margin-top: 0;
+}
+
 @media screen and (max-width: 768px) {
+  #booking-app {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  #booking-app_content {
+    padding: 20px;
+  }
+  #booking-app_menu {
+    max-width: 100%;
+    padding: 20px 0 35px 0;
+  }
   .booking-app_menu-icon {
     display: inline-block;
   }
@@ -100,6 +124,16 @@ a.booking-app_menu-link.active {
     width: 100%;
     text-align: center;
     margin-top: 5px;
+    line-height: 1;
+    font-size: 11px;
+  }
+  ul.booking-app_menu-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  a.booking-app_menu-link {
+    justify-content: center;
+    padding: 0;
   }
 }
 

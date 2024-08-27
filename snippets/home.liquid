@@ -162,6 +162,12 @@
               <span>今のステータス</span>
             </div>
           </div>
+
+          <div class="recent-lesson_detail-and-review-or-take-again">
+            <a href="#" class="recent-lesson_link-button button button--secondary button--full-width">Lesson detail</a>
+            <a href="#" class="recent-lesson_link-button button button--secondary button--full-width">Review(レビューがまだの場合)</a>
+            <a href="#" class="recent-lesson_link-button button button--secondary button--full-width">Take again</a>
+          </div>
           
         </div>
       </div>
@@ -170,22 +176,38 @@
 </div>
 
 <style>
+  .booking-app_content-home-title h1 {
+    margin: 0 0 10px 0;
+  }
+  .booking-app_content-home {
+    max-width: 95%;
+  }
+
   .coupon-use-button:hover,
-  .zoom-button:hover {
+  .zoom-button:hover,
+  .recent-lesson_link-button:hover {
     transform: scale(1.03);
     transition: transform 0.2s ease;
   }
   .coupon-use-button,
-  .coupon-use-button::after {
+  .coupon-use-button::after,
+  .recent-lesson_link-button,
+  .recent-lesson_link-button::after {
     border-radius: 10px;
     box-shadow: none;
     content: none;
+    border: 1px solid;
+  }
+  .recent-lesson_link-button {
+    transform: scale(1);
+    transition: transform 0.2s ease;
   }
   .coupon-footer {
     margin-top: clamp(10px, 2.5vw, 20px);
     text-align: right;
   }
-  .coupon-description {
+  .coupon-description,
+  .recent-lesson_detail-and-review-or-take-again {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -225,6 +247,8 @@
   .recent-lesson-image img {
     width: 100%;
     height: 100%;
+    max-height: 250px;
+    object-fit: cover;
   }
   .booked-lesson_info {
     padding: 20px 16px;
@@ -239,8 +263,8 @@
   }
   .booking-app_content-home-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* gap: 30px; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
   }
 .booked-lesson {
   display: flex;
@@ -267,7 +291,6 @@
 }
   .booking-app_card {
     background-color: #fff;
-    max-width: 350px;
     width: 100%;
   }
   .p-16 {
@@ -313,5 +336,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .booking-app_content-home-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .booking-app_content-home {
+      max-width: 100%;
+    }
   }
 </style>
