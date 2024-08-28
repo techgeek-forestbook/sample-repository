@@ -1,0 +1,319 @@
+
+/**
+* 既存テーマのCSS変更
+**/
+.cta_container,
+.breadcrumb {
+  display: none !important;
+}
+/**
+* 既存テーマのCSS変更 - 終了
+**/
+#booking-app {
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#booking-app_menu {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 250px;
+}
+#booking-app_content {
+  background-color: #F3F3F3;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+}
+.booking-app_menu-box {
+  text-align: center;
+}
+
+ul.booking-app_menu-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+li.booking-app_menu-item {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  text-align: left;
+}
+li.booking-app_menu-item img {
+  width: 100%;
+  height: 100%;
+}
+
+a.booking-app_menu-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.5;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+a.booking-app_menu-link:hover {
+  opacity: 1;
+  background-color: #F3F3F3;
+  transition: all 0.2s ease-in-out;
+}
+a.booking-app_menu-link.active {
+  opacity: 1;
+  font-weight: 700;
+}
+.booking-app_menu-highlight {
+  width: 100%;
+  white-space: nowrap;
+}
+.booking-app_menu-icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+footer.footer {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #booking-app {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  #booking-app_content {
+    padding: 20px;
+  }
+  #booking-app_menu {
+    max-width: 100%;
+    padding: 20px 0 35px 0;
+    top: auto;
+    bottom: 0;
+  }
+  .booking-app_menu-icon {
+    display: inline-block;
+  }
+  .booking-app_menu-highlight {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    line-height: 1;
+    font-size: 11px;
+  }
+  ul.booking-app_menu-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  a.booking-app_menu-link {
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+/**
+  * 各ページ で必要なCSSの処理
+  * */
+
+  .booking-app_content-page-title h1 {
+    margin: 0 0 10px 0;
+  }
+  .booking-app_content-page {
+    max-width: 90%;
+  }
+  .lesson-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .booking-app_content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    gap: 30px;
+  }
+  .booking-app_content-profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 42px;
+  }
+  .profile-status {
+    flex: 1;
+    flex-basis: 30%;
+  }
+  .profile-edit-forms {
+    flex: 1;
+    flex-basis: 70%;
+  }
+  .booking-app_card {
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .booking-app_card-wide {
+    background-color: #fff;
+    width: 100%;
+    max-width: 960px !important;
+    margin: 0 auto;
+  }
+  .booking-app_form-field {
+    width: 50%;
+    margin: auto;
+  }
+  .p-16 {
+    padding: 16px;
+  }
+
+  .coupon-use-button:hover,
+  .zoom-button:hover,
+  .lesson_link-button:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s ease;
+  }
+  .coupon-use-button,
+  .coupon-use-button::after,
+  .lesson_link-button,
+  .lesson_link-button::after {
+    border-radius: 10px;
+    box-shadow: none;
+    content: none;
+    border: 1px solid;
+  }
+  .lesson_link-button {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+    padding: 0;
+  }
+
+  .booked-lesson_info {
+    padding: 20px 16px;
+  }
+  .booked-lesson_info > *,
+  .recent-lesson_info > * {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 6px 0;
+  }
+.booked-lesson {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(var(--color-foreground), .2);
+}
+.booked-lesson > * {
+  flex: 1;
+  flex-basis: 50%;
+}
+.booked-lesson-image {
+  width: 175px;
+  height: 175px;
+}
+.booked-lesson-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.booked-lesson-title {
+  padding: 16px;
+  font-weight: bold;
+}
+.profile-subscription_label,
+.membership-rank_label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #8d8d8d;
+  margin: 0;
+}
+.profile-subscription_plan-title {
+  font-weight: bold;
+}
+.profile-subscription_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rank-bronze {
+  font-size: 24px;
+  font-weight: bold;
+  color: #b1927e;
+}
+.rank-icon img {
+  vertical-align: bottom;
+  width: 40px;
+  height: 40px;
+}
+.current-membership-rank {
+display: flex;
+align-items: center;
+gap: 16px;
+}
+.membership-rank-title h2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.customer {
+  /* customer クラスの上書き用 */
+  margin-top: 0 !important;
+}
+.customer form {
+  margin-top: 0 !important;
+}
+@media screen and (min-width: 769px) and (max-width: 1020px) {
+  
+  .booking-app_form-field {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .booking-app_content-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .booking-app_content-page {
+    max-width: 100%;
+  }
+  
+  .booking-app_form-field {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .booking-app_content-profile {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+/**
+  * 各ページ で必要なCSSの処理 - 終了
+  * */
+
+
+/**
+ * 共通のCSS
+**/
+hr {
+  margin: 16px 0 !important;
+}

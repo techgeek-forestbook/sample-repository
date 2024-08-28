@@ -1,10 +1,9 @@
 <div class="booking-app_content-page">
   <div class="booking-app_content-page-title">
-    <h1>Lesson History</h1>
+    <h1>Lesson Detail</h1>
   </div>
     <div class="booking-app_content-lesson-history">
   <div class="booking-app_content-grid">
-    {% comment %} 過去の予約の全てをループで表示する。今のところ、ページネーションは考えていない。 {% endcomment %}
       <div class="booking-app_card">
         <div class="booked-lesson">
           <div class="booked-lesson-title">
@@ -39,50 +38,7 @@
           </div>
 
           <div class="recent-lesson_detail-and-review-or-take-again">
-            <a href="/account?menu=detail&order_id=12344566888" class="lesson_link-button button button--secondary button--full-width">Lesson detail</a>
-            {% comment %} <a href="#" class="lesson_link-button button button--secondary button--full-width">Review(レビューがまだの場合に表示する)</a> {% endcomment %}
-            <a href="#" class="lesson_link-button button button--secondary button--full-width">Take again</a>
-          </div>
-          
-        </div>
-      </div>
-
-      <div class="booking-app_card">
-        <div class="booked-lesson">
-          <div class="booked-lesson-title">
-            <h3>2つめのレッスン履歴(テスト)</h3>
-          </div>
-          <div class="booked-lesson-image">
-            <img src="https://1om1.net/cdn/shop/files/Felice_boat_pose.jpg?v=1718063497" alt="lesson-title">
-          </div>
-        </div>
-        <div class="recent-lesson_info p-16">
-          <div class="recent-lesson_info-datetime">
-            <span class="lesson-icon">
-              <img src="{{ "calendar-icon.svg" | asset_url }}" alt="calendar-icon">
-            </span>
-            <span>August, 10, 2024, 10:00AM ~ 11:00AM</span>
-          </div>
-          <div class="recent-lesson_info-instructor">
-            <span class="lesson-icon">
-              <img src="{{ "instructor-icon.svg" | asset_url }}" alt="instructor-icon">
-            </span>
-            <span>Felice(Instructor Name)</span>
-          </div>
-
-          <div class="recent-lesson_info-status">
-            <span class="lesson-icon">
-              <img src="{{ "status-icon.svg" | asset_url }}" alt="status-icon">
-            </span>
-            <div>
-              <span>Status: </span>
-              <span>今のステータス</span>
-            </div>
-          </div>
-
-          <div class="recent-lesson_detail-and-review-or-take-again">
-            <a href="/account?menu=detail&order_id=99999999999" class="lesson_link-button button button--secondary button--full-width">Lesson detail</a>
-            {% comment %} <a href="#" class="lesson_link-button button button--secondary button--full-width">Review(レビューがまだの場合に表示する)</a> {% endcomment %}
+            <a href="#" class="lesson_link-button button button--secondary button--full-width">Review(レビューがまだの場合に表示する)</a>
             <a href="#" class="lesson_link-button button button--secondary button--full-width">Take again</a>
           </div>
           

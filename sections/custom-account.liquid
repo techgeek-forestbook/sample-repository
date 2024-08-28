@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ 'custom-account.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'custom-account.css' | asset_url | stylesheet_tag }}</noscript>
 {% if customer and request.path contains "account" %}
 
   <div id="booking-app">
@@ -8,142 +10,6 @@
   </div>
 {% endif %}
 
-{% stylesheet %}
-/**
-* 既存テーマのCSS変更
-**/
-.cta_container,
-.breadcrumb {
-  display: none !important;
-}
-/**
-* 既存テーマのCSS変更 - 終了
-**/
-#booking-app {
-  position: relative;
-  top: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-#booking-app_menu {
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  background-color: #fff;
-  padding: 30px;
-  width: 100%;
-  max-width: 250px;
-}
-#booking-app_content {
-  background-color: #F3F3F3;
-  padding: 30px;
-  height: 100%;
-  width: 100%;
-}
-.booking-app_menu-box {
-  text-align: center;
-}
-
-ul.booking-app_menu-list {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 10px;
-}
-li.booking-app_menu-item {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  width: 100%;
-  text-align: left;
-}
-li.booking-app_menu-item img {
-  width: 100%;
-  height: 100%;
-}
-
-a.booking-app_menu-link {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-weight: 500;
-  color: inherit;
-  opacity: 0.5;
-  padding: 10px;
-  transition: all 0.2s ease-in-out;
-}
-a.booking-app_menu-link:hover {
-  opacity: 1;
-  background-color: #F3F3F3;
-  transition: all 0.2s ease-in-out;
-}
-a.booking-app_menu-link.active {
-  opacity: 1;
-  font-weight: 700;
-}
-.booking-app_menu-highlight {
-  width: 100%;
-  white-space: nowrap;
-}
-.booking-app_menu-icon {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-}
-
-footer.footer {
-  margin-top: 0;
-}
-
-@media screen and (max-width: 768px) {
-  #booking-app {
-    flex-direction: column-reverse;
-    gap: 0;
-  }
-  #booking-app_content {
-    padding: 20px;
-  }
-  #booking-app_menu {
-    max-width: 100%;
-    padding: 20px 0 35px 0;
-  }
-  .booking-app_menu-icon {
-    display: inline-block;
-  }
-  .booking-app_menu-highlight {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    margin-top: 5px;
-    line-height: 1;
-    font-size: 11px;
-  }
-  ul.booking-app_menu-list {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  a.booking-app_menu-link {
-    justify-content: center;
-    padding: 0;
-  }
-}
-
-/**
- * 共通のCSS
-**/
-hr {
-  margin: 16px 0 !important;
-}
-{% endstylesheet %}
 
 <script>
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -154,22 +20,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (menuLink.getAttribute('data-menu') === menu || (!menu && menuLink.getAttribute('data-menu') === 'home')) {
       menuLink.classList.add('active');
     }
+    if(menu == "detail" && menuLink.getAttribute('data-menu') === 'history') {
+      menuLink.classList.add('active');
+    }
   });
   const displayElement = document.getElementById('booking-app_content');
   const homeElement = `{% render "home" %}`;
   const lessonHistoryElement = `{% render "lesson-history" %}`;
   const membershipElement = `{% render "membership" %}`;
-  const profileElement = `{% render "profile" %}`;
+  const lessonDetailElement = `{% render "lesson-detail" %}`;
+  // Note: Profileページは、 /account/addresses に実装する
   console.log({menu});  
   
   if(menu === 'home' || !menu) {
     displayElement.innerHTML = homeElement;
   } else if(menu === 'history') {
     displayElement.innerHTML = lessonHistoryElement;
+  } else if(menu === 'detail') {
+    displayElement.innerHTML = lessonDetailElement;
   } else if(menu === 'membership') {
     displayElement.innerHTML = membershipElement;
-  } else if(menu === 'profile') {
-    displayElement.innerHTML = profileElement;
   }
 
   /**
